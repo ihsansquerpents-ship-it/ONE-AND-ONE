@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============ SEO ============ -->
+  <title>Jes Gujes Gujes Barbershop — Pangkas Rapi di Argo, Ngawi</title>
+  <meta name="description" content="Barbershop di Argo, Ngawi. Fade bersih, potongan sesuai bentuk kepala, harga jujur mulai Rp15.000. Booking antrian lewat WhatsApp — nggak perlu nunggu lama.">
+  <meta name="keywords" content="barbershop ngawi, pangkas rambut argo, barber ngawi, fade haircut ngawi, jes gujes gujes">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.jesgujesgujes.com/">
+  <meta name="theme-color" content="#191613">
+
+  <!-- Open Graph (tampilan saat link dibagikan) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jes Gujes Gujes Barbershop — Argo, Ngawi">
+  <meta property="og:description" content="Pangkas rapi, harga rame. Booking antrian langsung dari WhatsApp.">
+  <meta property="og:image" content="https://picsum.photos/seed/jgg-hero/1200/630.jpg?grayscale">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Favicon (ganti dengan file asli kalau sudah ada) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23191613'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='26' font-weight='900' fill='%23F2ECDF' text-anchor='middle'%3EJG%3C/text%3E%3C/svg%3E">
+
+  <!-- Data terstruktur untuk Google (Local Business / SEO lokal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Jes Gujes Gujes Barbershop",
+    "description": "Barbershop di Argo, Ngawi. Fade, scissor cut, shaving, harga mulai Rp15.000.",
+    "image": "https://picsum.photos/seed/jgg-hero/1200/630.jpg?grayscale",
+    "telephone": "+6285220483904",
+    "priceRange": "Rp5.000 - Rp45.000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Raya Argo No. 27",
+      "addressLocality": "Argo",
+      "addressRegion": "Jawa Timur",
+      "addressCountry": "ID"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "17:00" }
+    ],
+    "sameAs": [
+      "https://instagram.com/jesgujes.barber",
+      "https://tiktok.com/@jesgujes.barber"
+    ]
+  }
+  </script>
+
+  <!-- Font: Bebas Neue (display), Sora (body), Yellowtail (aksen script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:  '#F2ECDF',   // latar utama (krem kertas)
+            cream2: '#E9E1CE',   // latar alternatif
+            ink:    '#191613',   // charcoal — teks & section gelap
+            brick:  '#C1442E',   // merah barber — aksen utama / CTA
+            brickdark: '#A33622',
+            leaf:   '#3E7C4F',   // hijau untuk status "buka"
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body: ['Sora', 'sans-serif'],
+            script: ['Yellowtail', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 100px; }
+    ::selection { background: #C1442E; color: #F2ECDF; }
+
+    /* Tekstur noise halus di atas seluruh halaman — memberi kedalaman tanpa gradasi */
+    body::after {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
+
+    /* ===== Barber pole: garis merah-krem-ink yang berputar ===== */
+    .pole {
+      background: repeating-linear-gradient(-45deg, #C1442E 0 10px, #F2ECDF 10px 18px, #191613 18px 28px);
+      animation: poleMove .9s linear infinite;
+      border-radius: 9999px;
+    }
+    @keyframes poleMove { to { background-position: 39.6px 0; } }
+
+    /* ===== Marquee (running text) ===== */
+    .mq-track { display: flex; align-items: center; width: max-content; animation: mq 26s linear infinite; }
+    .marquee:hover .mq-track { animation-play-state: paused; }
+    .mq-item { display: flex; align-items: center; gap: 1.5rem; margin-right: 1.5rem; white-space: nowrap; }
+    @keyframes mq { to { transform: translateX(-50%); } }
+
+    /* ===== Titik-titik penghubung pada daftar harga (dot leaders) ===== */
+    .dots { flex: 1 1 auto; min-width: 1.25rem; margin: 0 .5rem 6px; border-bottom: 2px dotted rgba(25,22,19,.35); }
+
+    /* ===== Animasi muncul saat scroll ===== */
+    .reveal { opacity: 0; transform: translateY(26px);
+      transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+      transition-delay: var(--d, 0s); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .pole, .mq-track, .animate-spin-slow { animation: none !important; }
+    }
+
+    /* ===== Badge berputar di foto hero ===== */
+    .animate-spin-slow { animation: spinSlow 14s linear infinite; transform-origin: center; }
+    @keyframes spinSlow { to { transform: rotate(360deg); } }
+    .badge-text { font: 600 11px 'Sora', sans-serif; letter-spacing: 2px; fill: #191613; text-transform: uppercase; }
+
+    /* ===== Wordmark outline di footer ===== */
+    .text-outline-cream { color: transparent; -webkit-text-stroke: 1.5px rgba(242,236,223,.22); }
+
+    /* Bayangan navbar saat scroll */
+    .is-scrolled #navBar { box-shadow: 0 14px 30px -18px rgba(25,22,19,.5); }
+  </style>
+</head>
+
+<body class="font-body bg-cream text-ink antialiased overflow-x-hidden">
+
+  <!-- ====== SIMBOL IKON (dipakai berulang lewat <use>) ====== -->
+  <svg width="0" height="0" class="hidden" aria-hidden="true">
+    <symbol id="wa-icon" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </symbol>
+    <symbol id="tiktok-icon" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+    </symbol>
+  </svg>
+
+  <!-- ================= HEADER: TOPBAR + NAVBAR ================= -->
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50">
+    <!-- Topbar tipis: lokasi + status buka real-time -->
+    <div class="bg-ink text-cream">
+      <div class="mx-auto max-w-6xl px-5 h-8 flex items-center justify-between text-[11px] font-medium tracking-[.15em] uppercase">
+        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brick"></i>Argo · Ngawi — Jatim</span>
+        <span class="flex items-center gap-2">
+          <span data-open-dot class="w-2 h-2 rounded-full bg-leaf animate-pulse"></span>
+          <span data-open-text>Memuat status…</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Navbar utama -->
+    <div id="navBar" class="bg-cream/95 backdrop-blur border-b-2 border-ink transition-shadow duration-300">
+      <div class="mx-auto max-w-6xl px-5 h-16 md:h-[72px] flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#beranda" class="flex items-center gap-3 group">
+          <span class="grid place-items-center w-10 h-10 bg-ink text-cream font-display text-xl tracking-widest border-2 border-ink group-hover:bg-brick group-hover:border-brick transition-colors">JG</span>
+          <span class="leading-none">
+            <span class="block font-display text-lg tracking-[.12em]">JES GUJES GUJES</span>
+            <span class="block text-[10px] font-semibold tracking-[.28em] text-ink/50 uppercase">Barbershop — Argo</span>
+          </span>
+        </a>
+
+        <!-- Link desktop -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#beranda" class="hover:text-brick transition-colors">Beranda</a>
+          <a href="#tentang" class="hover:text-brick transition-colors">Tentang</a>
+          <a href="#layanan" class="hover:text-brick transition-colors">Layanan</a>
+          <a href="#testimoni" class="hover:text-brick transition-colors">Testimoni</a>
+          <a href="#kontak" class="hover:text-brick transition-colors">Kontak</a>
+        </nav>
+
+        <!-- CTA desktop -->
+        <a data-wa-default target="_blank" rel="noopener"
+           class="hidden md:inline-flex items-center gap-2 bg-brick hover:bg-brickdark text-cream font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
+          <svg class="w-4 h-4"><use href="#wa-icon"/></svg> Booking
+        </a>
+
+        <!-- Tombol hamburger (mobile) -->
+        <button id="menuBtn" class="md:hidden w-10 h-10 grid place-items-center border-2 border-ink" aria-label="Buka menu navigasi">
+          <i data-lucide="menu" id="iconOpen" class="w-5 h-5"></i>
+          <i data-lucide="x" id="iconClose" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+
+      <!-- Menu mobile -->
+      <div id="mobileMenu" class="md:hidden hidden border-t-2 border-ink bg-cream">
+        <nav class="px-5 py-4 flex flex-col font-display text-2xl tracking-[.1em]">
+          <a href="#beranda" class="py-2.5 border-b border-ink/10">BERANDA</a>
+          <a href="#tentang" class="py-2.5 border-b border-ink/10">TENTANG</a>
+          <a href="#layanan" class="py-2.5 border-b border-ink/10">LAYANAN</a>
+          <a href="#testimoni" class="py-2.5 border-b border-ink/10">TESTIMONI</a>
+          <a href="#kontak" class="py-2.5 border-b border-ink/10">KONTAK</a>
+          <a data-wa-default target="_blank" rel="noopener"
+             class="mt-4 inline-flex items-center justify-center gap-2 bg-brick text-cream text-base font-body font-semibold px-5 py-3.5 rounded-full">
+            <svg class="w-4 h-4"><use href="#wa-icon"/></svg> Booking via WhatsApp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section id="beranda" class="relative pt-32 md:pt-44 pb-16 md:pb-24 overflow-hidden">
+      <div class="mx-auto max-w-6xl px-5 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+        <!-- Kiri: teks -->
+        <div class="lg:col-span-7">
+          <p class="font-script text-brick text-2xl md:text-3xl reveal">Barbershop — Argo, Ngawi</p>
+          <h1 class="mt-2 font-display leading-[.92] text-[clamp(3.4rem,11vw,7.5rem)]">
+            <span class="block reveal" style="--d:.06s">POTONG RAPI.</span>
+            <span class="block text-brick reveal" style="--d:.14s">HARGA RAME.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-ink/70 leading-relaxed reveal" style="--d:.2s">
+            Barbershop langganan warga Argo, Ngawi. Fade bersih, potongan sesuai bentuk kepala,
+            harga jujur — dan antrian bisa diatur dari WhatsApp sebelum kamu melangkah ke sini.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4 reveal" style="--d:.26s">
+            <a data-wa-default target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2.5 bg-brick hover:bg-brickdark text-cream font-semibold px-7 py-3.5 rounded-full transition-colors active:scale-[.98]">
+              <svg class="w-5 h-5"><use href="#wa-icon"/></svg> Pesan via WhatsApp
+            </a>
+            <a href="#layanan"
+               class="inline-flex items-center gap-2 border-2 border-ink hover:bg-ink hover:text-cream font-semibold px-7 py-3.5 rounded-full transition-colors">
+              Lihat Layanan <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm reveal" style="--d:.32s">
+            <span class="flex items-center gap-2">
+              <span class="flex gap-0.5 text-brick">
+                <i data-lucide="star" class="w-4 h-4 fill-brick"></i><i data-lucide="star" class="w-4 h-4 fill-brick"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-brick"></i><i data-lucide="star" class="w-4 h-4 fill-brick"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-brick"></i>
+              </span>
+              <strong>4,9</strong><span class="text-ink/55">· 212 ulasan Google</span>
+            </span>
+            <span class="w-1 h-1 rounded-full bg-ink/30 hidden sm:block"></span>
+            <span class="inline-flex items-center gap-2 border border-ink/25 rounded-full px-4 py-1.5">
+              <span data-open-dot class="w-2 h-2 rounded-full bg-leaf animate-pulse"></span>
+              <span data-open-text class="font-medium">Memuat status…</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Kanan: foto + barber pole + badge berputar -->
+        <div class="lg:col-span-5 reveal" style="--d:.2s">
+          <figure class="relative max-w-md mx-auto lg:max-w-none">
+            <!-- Barber pole animasi di tepi kiri -->
+            <span class="pole absolute top-6 bottom-6 -left-6 w-3 hidden md:block" aria-hidden="true"></span>
+            <div class="border-[3px] border-ink shadow-[14px_14px_0_#191613]">
+              <img src="https://i.pinimg.com/736x/ac/87/16/ac87163fa2c3d09f236484875d8daf1d.jpg"
+                   alt="Suasana kursi pangkas di Jes Gujes Gujes Barbershop, Argo, Ngawi"
+                   class="block w-full aspect-[4/5] object-cover" width="900" height="1100">
+            </div>
+            <!-- Stiker kecil -->
+            <span class="absolute -bottom-4 left-6 -rotate-2 bg-brick text-cream text-[11px] font-bold tracking-[.25em] uppercase px-3.5 py-2 border-2 border-ink shadow-[4px_4px_0_#191613]">Sejak 2019 · 3 kursi</span>
+
+            <!-- Badge melingkar berputar → klik langsung ke WhatsApp -->
+            <a id="waBadge" data-wa-default target="_blank" rel="noopener" aria-label="Pesan via WhatsApp"
+               class="absolute -top-8 -right-4 md:-right-8 w-28 h-28 md:w-32 md:h-32 rounded-full bg-cream border-[3px] border-ink grid place-items-center hover:bg-cream2 transition-colors">
+              <svg viewBox="0 0 120 120" class="absolute inset-0 w-full h-full animate-spin-slow" aria-hidden="true">
+                <defs><path id="circlePath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+                <text class="badge-text"><textPath href="#circlePath" textLength="284" lengthAdjust="spacingAndGlyphs">Booking via WhatsApp • Jes Gujes Gujes •</textPath></text>
+              </svg>
+              <svg class="w-8 h-8 text-brick relative"><use href="#wa-icon"/></svg>
+            </a>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE PEMISAH ================= -->
+    <div class="py-6 overflow-hidden" aria-hidden="true">
+      <div class="-rotate-1 scale-x-110 marquee bg-ink text-cream py-3.5 border-y-2 border-ink">
+        <div class="mq-track font-display text-lg md:text-xl tracking-[.2em]" id="mqTrack">
+          <span class="mq-item">FADE &amp; TAPER <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">SCISSOR CUT <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">SHAVING <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">KIDS FRIENDLY <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">STYLING POMADE <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">PIJAT KEPALA <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">BOOKING VIA WA <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">WALK-IN WELCOME <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">HARGA JUJUR <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+          <span class="mq-item">ARGO · NGAWI <i data-lucide="scissors" class="w-4 h-4 text-brick"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= TENTANG KAMI ================= -->
+    <section id="tentang" class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+        <!-- Kolase foto -->
+        <figure class="relative reveal">
+          <img src="https://i.pinimg.com/736x/d8/4d/a2/d84da279d2ba17d4b1ea7fd2fd667528.jpg"
+               alt="Barber sedang merapikan potongan pelanggan"
+               class="w-[78%] aspect-[4/5] object-cover border-[3px] border-ink shadow-[12px_12px_0_#191613]" loading="lazy">
+          <img src="https://i.pinimg.com/1200x/6b/c4/75/6bc475a9c3a118a29a9724ef04f90cd5.jpg"
+               alt="Detail alat gunting dan pomade di meja barber"
+               class="absolute -bottom-10 right-0 w-[46%] aspect-square object-cover border-[3px] border-cream shadow-[8px_8px_0_#C1442E]" loading="lazy">
+          <span class="absolute top-5 -right-1 rotate-2 bg-brick text-cream text-[11px] font-bold tracking-[.25em] uppercase px-3 py-1.5 border-2 border-ink">Est. 2019</span>
+        </figure>
+
+        <!-- Cerita + keunggulan -->
+        <div class="lg:pl-4">
+          <p class="font-script text-brick text-2xl reveal">Kenapa Jes Gujes Gujes?</p>
+          <h2 class="mt-2 font-display text-5xl md:text-6xl leading-[.95] reveal" style="--d:.06s">
+            DARI TERAS RUMAH,<br>JADI RUMAH WARGA ARGO.
+          </h2>
+          <p class="mt-5 text-ink/70 leading-relaxed reveal" style="--d:.1s">
+            Tahun 2019, Jes Gujes Gujes mulai dari satu kursi gunting di teras rumah di Argo.
+            Yang awalnya cuma merapikan anak-anak sekitar, pelan-pelan tumbuh jadi barbershop
+            tiga kursi — dan tempat nongkrong warga sebelum arisan, kondangan, atau sekadar
+            gaul habis kerja. Kami percaya: pangkasan bagus nggak harus mahal, tapi harus dikerjakan serius.
+          </p>
+
+          <div class="mt-9 reveal" style="--d:.14s">
+            <div class="border-t-2 border-ink/10 py-5 flex gap-5">
+              <span class="font-display text-3xl text-brick w-10 shrink-0">01</span>
+              <div><h3 class="font-bold text-lg">Ngobrol dulu, potong kemudian</h3>
+              <p class="text-sm text-ink/60 mt-1">Setiap model didiskusikan sebelum gunting menyentuh rambut. Kalau kurang cocok dengan bentuk kepala, kami bilang jujur.</p></div>
+            </div>
+            <div class="border-t-2 border-ink/10 py-5 flex gap-5">
+              <span class="font-display text-3xl text-brick w-10 shrink-0">02</span>
+              <div><h3 class="font-bold text-lg">Harga di dinding, bukan di kasir</h3>
+              <p class="text-sm text-ink/60 mt-1">Daftar harga menempel jelas di tempat dan di halaman ini. Nggak ada biaya kejutan waktu bayar.</p></div>
+            </div>
+            <div class="border-t-2 border-ink/10 py-5 flex gap-5">
+              <span class="font-display text-3xl text-brick w-10 shrink-0">03</span>
+              <div><h3 class="font-bold text-lg">Alat disterilkan di depan mata</h3>
+              <p class="text-sm text-ink/60 mt-1">Gunting, razor, dan cape dibersihkan untuk tiap pelanggan. Bersih itu standar, bukan bonus.</p></div>
+            </div>
+            <div class="border-t-2 border-b-2 border-ink/10 py-5 flex gap-5">
+              <span class="font-display text-3xl text-brick w-10 shrink-0">04</span>
+              <div><h3 class="font-bold text-lg">Antri dari rumah lewat WhatsApp</h3>
+              <p class="text-sm text-ink/60 mt-1">Kirim pesan, kami catat giliranmu. Datang tepat waktu — nggak perlu berdiri nunggu di teras.</p></div>
+            </div>
+          </div>
+
+          <!-- Statistik singkat -->
+          <div class="mt-10 grid grid-cols-3 gap-6 pt-8 border-t-2 border-ink reveal" style="--d:.18s">
+            <div><p class="font-display text-4xl md:text-5xl">15.000+</p><p class="text-xs uppercase tracking-[.15em] text-ink/55 mt-1.5">Pangkasan selesai</p></div>
+            <div><p class="font-display text-4xl md:text-5xl">4,9</p><p class="text-xs uppercase tracking-[.15em] text-ink/55 mt-1.5">Rating rata-rata</p></div>
+            <div><p class="font-display text-4xl md:text-5xl">6 Th</p><p class="text-xs uppercase tracking-[.15em] text-ink/55 mt-1.5">Melayani Argo</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LAYANAN & HARGA ================= -->
+    <section id="layanan" class="py-20 md:py-28 bg-cream2 border-y border-ink/10">
+      <div class="mx-auto max-w-6xl px-5">
+
+        <div class="max-w-2xl">
+          <p class="font-script text-brick text-2xl reveal">Daftar Harga</p>
+          <h2 class="mt-2 font-display text-5xl md:text-6xl leading-[.95] reveal" style="--d:.06s">PILIH LAYANAN,<br>KAMI SIAPKAN KURSI.</h2>
+          <p class="mt-4 text-ink/70 reveal" style="--d:.1s">Klik layanan mana pun untuk langsung booking lewat WhatsApp. Semua harga final — sudah termasuk finishing hair tonic.</p>
+        </div>
+
+        <!-- Price list klasik dua kolom (dirender oleh JS) -->
+        <div class="mt-12 grid md:grid-cols-2 gap-10 lg:gap-16">
+          <div class="reveal">
+            <h3 class="flex items-center gap-4 font-display text-2xl tracking-[.15em]">DASAR<span class="h-[2px] flex-1 bg-ink/15"></span></h3>
+            <div id="priceDasar" class="mt-2"></div>
+          </div>
+          <div class="reveal" style="--d:.08s">
+            <h3 class="flex items-center gap-4 font-display text-2xl tracking-[.15em]">SPESIALIS<span class="h-[2px] flex-1 bg-ink/15"></span></h3>
+            <div id="priceSpesial" class="mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Paket hemat (asimetris: 1 besar + 2 bertumpuk) -->
+        <div class="mt-24">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h3 class="font-display text-3xl md:text-4xl tracking-[.08em] reveal">PAKET HEMAT</h3>
+              <p class="text-ink/60 mt-1 reveal" style="--d:.06s">Bundling favorit pelanggan — lebih murah dari pesan satuan.</p>
+            </div>
+            <a data-wa-default target="_blank" rel="noopener" class="reveal inline-flex items-center gap-2 text-sm font-semibold text-brick hover:text-brickdark transition-colors" style="--d:.1s">
+              Tanya paket dulu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div id="packagesGrid" class="mt-8 grid lg:grid-cols-2 gap-6 items-start"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONI ================= -->
+    <section id="testimoni" class="bg-ink text-cream py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 text-center">
+        <p class="font-script text-brick text-2xl reveal">Kata Pelanggan</p>
+        <h2 class="mt-2 font-display text-4xl md:text-6xl leading-[.95] reveal" style="--d:.06s">
+          SEKALI PANGKAS DI SINI,<br>BALIK LAGI MINGGU DEPAN.
+        </h2>
+
+        <!-- Slider (dirender oleh JS) -->
+        <div id="tsBody" class="mt-12 transition-opacity duration-200 reveal" style="--d:.1s"></div>
+
+        <div class="mt-9 flex items-center justify-center gap-6 reveal" style="--d:.14s">
+          <button id="tsPrev" aria-label="Testimoni sebelumnya"
+                  class="w-11 h-11 grid place-items-center rounded-full border-2 border-cream/30 hover:bg-cream hover:text-ink transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </button>
+          <div id="tsDots" class="flex items-center gap-2"></div>
+          <button id="tsNext" aria-label="Testimoni berikutnya"
+                  class="w-11 h-11 grid place-items-center rounded-full border-2 border-cream/30 hover:bg-cream hover:text-ink transition-colors">
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+        <p class="mt-8 text-xs uppercase tracking-[.25em] text-cream/40 reveal" style="--d:.18s">4,9 / 5 — dari 212 ulasan Google</p>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK & LOKASI ================= -->
+    <section id="kontak" class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 grid lg:grid-cols-2 gap-14 lg:gap-16 items-start">
+
+        <!-- Kiri: info -->
+        <div>
+          <p class="font-script text-brick text-2xl reveal">Lokasi &amp; Reservasi</p>
+          <h2 class="mt-2 font-display text-5xl md:text-6xl leading-[.95] reveal" style="--d:.06s">MAMPIR LANGSUNG, ATAU BOOKING DARI RUMAH.</h2>
+          <p class="mt-4 text-ink/70 reveal" style="--d:.1s">Kami di pinggir jalan raya Argo — gampang dicari, parkir motor luas, dan angin teras selalu siap.</p>
+
+          <div class="mt-9 space-y-7 reveal" style="--d:.14s">
+            <!-- Alamat -->
+            <div class="flex gap-4">
+              <span class="grid place-items-center w-11 h-11 border-2 border-ink shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.2em] text-ink/50">Alamat</p>
+                <p class="font-semibold mt-1" id="alamatText">Jl. Raya Argo No. 27, Kec. Argo, Kab. Ngawi, Jawa Timur</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Argo,+Ngawi,+Jawa+Timur" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 text-sm font-semibold text-brick underline underline-offset-4 hover:text-brickdark transition-colors mt-1">
+                  Buka di Google Maps <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="flex gap-4">
+              <span class="grid place-items-center w-11 h-11 border-2 border-ink shrink-0"><svg class="w-5 h-5"><use href="#wa-icon"/></svg></span>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[.2em] text-ink/50">WhatsApp Admin</p>
+                <p class="font-semibold mt-1 text-lg" id="waDisplay">0812-3456-7890</p>
+                <div class="flex flex-wrap gap-3 mt-2.5">
+                  <a data-wa-default target="_blank" rel="noopener"
+                     class="inline-flex items-center gap-2 bg-ink hover:bg-brick text-cream text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+                    <svg class="w-4 h-4"><use href="#wa-icon"/></svg> Chat Sekarang
+                  </a>
+                  <button id="copyWa" class="inline-flex items-center gap-2 border-2 border-ink hover:bg-ink hover:text-cream text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+                    <i data-lucide="copy" class="w-4 h-4"></i> Salin Nomor
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Jam operasional (dirender JS, hari ini di-highlight) -->
+            <div class="flex gap-4">
+              <span class="grid place-items-center w-11 h-11 border-2 border-ink shrink-0"><i data-lucide="clock" class="w-5 h-5"></i></span>
+              <div class="grow">
+                <p class="text-xs font-semibold uppercase tracking-[.2em] text-ink/50">Jam Operasional <span class="normal-case tracking-normal text-ink/40">(WIB)</span></p>
+                <div id="hoursList" class="mt-2 max-w-sm"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Peta -->
+          <iframe
+            src="https://www.google.com/maps?q=Argo,+Ngawi,+Jawa+Timur&z=14&output=embed"
+            title="Peta lokasi Jes Gujes Gujes Barbershop di Argo, Ngawi"
+            class="mt-10 w-full h-64 border-[3px] border-ink shadow-[10px_10px_0_#191613] grayscale reveal"
+            style="--d:.18s" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Kanan: form booking cepat -->
+        <div class="lg:sticky lg:top-32 reveal" style="--d:.1s">
+          <form id="bookingForm" class="bg-cream border-[3px] border-ink shadow-[12px_12px_0_#191613] p-6 md:p-9">
+            <h3 class="font-display text-3xl md:text-4xl tracking-[.06em]">BOOKING CEPAT</h3>
+            <p class="text-sm text-ink/60 mt-1.5">Isi 15 detik — konfirmasi jadwal dikirim langsung ke admin lewat WhatsApp. Tanpa biaya apa pun.</p>
+
+            <div class="mt-7 space-y-5">
+              <div>
+                <label for="bkName" class="block text-xs font-bold uppercase tracking-[.2em] text-ink/60 mb-2">Nama Kamu</label>
+                <input id="bkName" type="text" required placeholder="cth. Rizky Argo"
+                       class="w-full bg-transparent border-2 border-ink/25 focus:border-ink outline-none px-4 py-3 placeholder:text-ink/30 transition-colors">
+              </div>
+
+              <div>
+                <label for="bkService" class="block text-xs font-bold uppercase tracking-[.2em] text-ink/60 mb-2">Layanan</label>
+                <div class="relative">
+                  <select id="bkService" required
+                          class="w-full appearance-none bg-transparent border-2 border-ink/25 focus:border-ink outline-none px-4 py-3 pr-10 transition-colors">
+                  </select>
+                  <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="bkDate" class="block text-xs font-bold uppercase tracking-[.2em] text-ink/60 mb-2">Tanggal</label>
+                  <input id="bkDate" type="date" required
+                         class="w-full bg-transparent border-2 border-ink/25 focus:border-ink outline-none px-4 py-3 transition-colors">
+                </div>
+                <div>
+                  <label for="bkTime" class="block text-xs font-bold uppercase tracking-[.2em] text-ink/60 mb-2">Jam</label>
+                  <div class="relative">
+                    <select id="bkTime" required
+                            class="w-full appearance-none bg-transparent border-2 border-ink/25 focus:border-ink outline-none px-4 py-3 pr-10 transition-colors"></select>
+                    <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit"
+                    class="mt-8 w-full inline-flex items-center justify-center gap-2.5 bg-brick hover:bg-brickdark text-cream font-semibold px-7 py-4 rounded-full transition-colors active:scale-[.99]">
+              <svg class="w-5 h-5"><use href="#wa-icon"/></svg> Kirim Booking ke WhatsApp
+            </button>
+            <p class="mt-3 text-center text-xs text-ink/45">Jadwal dikonfirmasi admin maks. 15 menit pada jam operasional.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-ink text-cream pt-16 pb-8 overflow-hidden">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="grid place-items-center w-10 h-10 bg-cream text-ink font-display text-xl tracking-widest">JG</span>
+            <span class="font-display text-lg tracking-[.12em]">JES GUJES GUJES</span>
+          </div>
+          <p class="mt-4 text-sm text-cream/55 leading-relaxed max-w-xs">Pangkas rapi, harga rame — barbershop warga Argo, Ngawi sejak 2019.</p>
+          <div class="flex gap-3 mt-5">
+            <a href="https://instagram.com/jesgujes.barber" target="_blank" rel="noopener" aria-label="Instagram"
+               class="w-10 h-10 grid place-items-center rounded-full border border-cream/25 hover:bg-cream hover:text-ink transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://tiktok.com/@jesgujes.barber" target="_blank" rel="noopener" aria-label="TikTok"
+               class="w-10 h-10 grid place-items-center rounded-full border border-cream/25 hover:bg-cream hover:text-ink transition-colors"><svg class="w-4 h-4"><use href="#tiktok-icon"/></svg></a>
+            <a href="https://facebook.com/jesgujesbarbershop" target="_blank" rel="noopener" aria-label="Facebook"
+               class="w-10 h-10 grid place-items-center rounded-full border border-cream/25 hover:bg-cream hover:text-ink transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-cream/40">Jelajah</p>
+          <nav class="mt-4 flex flex-col gap-2.5 text-sm">
+            <a href="#tentang" class="text-cream/70 hover:text-cream transition-colors">Tentang Kami</a>
+            <a href="#layanan" class="text-cream/70 hover:text-cream transition-colors">Layanan &amp; Harga</a>
+            <a href="#testimoni" class="text-cream/70 hover:text-cream transition-colors">Testimoni</a>
+            <a href="#kontak" class="text-cream/70 hover:text-cream transition-colors">Kontak &amp; Lokasi</a>
+          </nav>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-cream/40">Kontak</p>
+          <p class="mt-4 text-sm text-cream/70 leading-relaxed">Jl. Raya Argo No. 27, Kec. Argo, Kab. Ngawi, Jawa Timur</p>
+          <p class="mt-2 text-sm text-cream/70">Senin–Jumat 09.00–20.00 · Sabtu 08.00–21.00 · Minggu 10.00–17.00</p>
+          <a data-wa-default target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brick hover:text-cream transition-colors">
+            <svg class="w-4 h-4"><use href="#wa-icon"/></svg> <span id="waDisplayFooter">085220483904</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Wordmark raksasa outline -->
+      <p class="text-outline-cream font-display leading-[.8] text-[10.5vw] whitespace-nowrap text-center mt-16 select-none" aria-hidden="true">JES GUJES GUJES</p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-cream/15 pt-6 mt-8 text-xs text-cream/40">
+        <p>© <span id="year"></span> Jes Gujes Gujes Barbershop · Argo, Ngawi</p>
+        <p>Pangkas rapi, harga rame.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= TOAST NOTIFIKASI ================= -->
+  <div class="fixed inset-x-0 bottom-6 z-[100] flex justify-center pointer-events-none">
+    <div id="toastBox" class="pointer-events-auto flex items-center gap-2.5 bg-ink text-cream text-sm font-medium pl-3 pr-5 py-3 rounded-full border border-cream/20 shadow-2xl opacity-0 translate-y-4 transition-all duration-300">
+      <span class="grid place-items-center w-6 h-6 rounded-full bg-brick shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+      <span id="toastMsg"></span>
+    </div>
+  </div>
+
+  <!-- Ikon Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    /* =====================================================================
+       1. KONFIGURASI — CUKUP UBAH BAGIAN INI
+       ===================================================================== */
+    const CONFIG = {
+  wa: "6285220483904",             // ← nomor WA asli (0 di depan diganti 62)
+  waDisplay: "0852-2048-3904",     // ← tampilan nomor di halaman
+  defaultMsg: "Halo Jes Gujes Gujes! Saya mau tanya & booking jadwal pangkas. Masih ada slot hari ini?",
+      // Jam operasional per hari (index 0 = Minggu). open/close dalam jam angka bulat.
+      hours: [
+        { d: "Minggu", open: 10, close: 17 },
+        { d: "Senin",  open: 9,  close: 20 },
+        { d: "Selasa", open: 9,  close: 20 },
+        { d: "Rabu",   open: 9,  close: 20 },
+        { d: "Kamis",  open: 9,  close: 20 },
+        { d: "Jumat",  open: 9,  close: 20 },
+        { d: "Sabtu",  open: 8,  close: 21 },
+      ],
+    };
+
+    /* Daftar layanan (muncul di price list & dropdown form) */
+    const SERVICES = {
+      dasar: [
+        { name: "Haircut Dewasa",          price: 20000, desc: "Model bebas, didiskusikan dulu sebelum eksekusi" },
+        { name: "Haircut Anak (≤10 thn)",  price: 15000, desc: "Barber sabar, ramah sama anak yang takut gunting" },
+        { name: "Cukur Jenggot / Shaving", price: 15000, desc: "Razor bersih, handuk hangat, selesai rapi" },
+        { name: "Cuci Keramas",            price: 8000,  desc: "Shampo + pijat ringan kepala" },
+        { name: "Rapiin Kumis",            price: 5000,  desc: "A la carte — gratis kalau ikut haircut" },
+      ],
+      spesial: [
+        { name: "Fade / Taper",            price: 25000, desc: "Fade bersih: skin, mid, sampai low fade" },
+        { name: "Undercut",                price: 25000, desc: "Samping dibersihkan, atas dibiarkan panjang" },
+        { name: "Hair Color / Bleaching",  price: 60000, desc: "Harga menyesuaikan panjang & ketebalan rambut" },
+        { name: "Facial Wajah",            price: 20000, desc: "Cuci muka + masker, pas banget sebelum acara" },
+        { name: "Hair Vitamin + Pijat",    price: 15000, desc: "Pemulihan rambut kering plus relaksasi" },
+      ],
+    };
+
+    /* Paket bundling (3 produk unggulan, masing-masing punya foto & tombol WA) */
+    const PACKAGES = [
+      {
+        id: "sakti", name: "Paket Sakti", tag: "Paling Laris", price: 30000, save: 8000,
+        desc: "Ritual lengkap ±45 menit biar rambut selalu siap kamera.",
+        includes: ["Haircut model bebas / fade", "Cuci keramas + pijat kepala", "Styling pomade pilihan", "Hair tonic penutup"],
+        img: "https://i.pinimg.com/736x/a2/ec/23/a2ec23015869e56e8c511d47093010f0.jpg",
+      },
+      {
+        id: "keluarga", name: "Paket Pasangan", price: 30000, save: 5000,
+        desc: "Satu kursi buat ayah, satu buat buah hati.",
+        includes: ["2× haircut (dewasa + anak ≤10 thn)", "2× cuci keramas", "Styling ringan"],
+        img: "https://i.pinimg.com/736x/88/22/f6/8822f686319a13ce1ccef6dc9e5634cb.jpg",
+      },
+      {
+        id: "grooming", name: "Paket Full Grooming", price: 45000, save: 13000,
+        desc: "Tuntas total sebelum kondangan atau interview kerja.",
+        includes: ["Haircut + shaving", "Cuci keramas + facial ringan", "Hair vitamin + styling"],
+        img: "https://i.pinimg.com/736x/d7/84/56/d78456b5d18a1b822372497a744d9b6c.jpg",
+      },
+    ];
+
+    /* Testimoni pelanggan */
+    const TESTIMONIALS = [
+      { rating: 5, text: "Fade-nya paling bersih se-Ngawi. Barber-nya nanya dulu model yang diinginkan, hasilnya nggak pernah mengecewakan.", name: "BAGUS MATRIAL", meta: "Pelanggan sejak 2021" },
+      { rating: 5, text: "Suami saya yang tadinya takut dipotong rambut sekarang malah nagih antri di Jes Gujes. Sabar banget sama Suami-suami saya.", name: "RINA TITIK KUMPUL", meta: "Bunda dua suami — Argo" },
+      { rating: 5, text: "Booking lewat WhatsApp, pas dateng langsung dipanggil. Nggak buang waktu nunggu. Ini alasan aku langganan.", name: "DIMAS KECAP", meta: "Guru — Ngawi Kota" },
+      { rating: 5, text: "Tempatnya bersih, alat disterilkan di depan mata, harganya jujur sesuai papan, masnya gantel poll. Puas!", name: "WAWAN STANDAR DUA", meta: "Wiraswasta — Ngawi" },
+    ];
+
+    /* =====================================================================
+       2. UTILITAS & HELPER
+       ===================================================================== */
+    const $  = (s, c = document) => c.querySelector(s);
+    const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+    const money    = n => "Rp" + n.toLocaleString("id-ID");
+    const fmtHour  = h => String(h).padStart(2, "0") + ".00";
+    const buildWa  = msg => `https://wa.me/${CONFIG.wa}?text=${encodeURIComponent(msg)}`;
+
+    /* =====================================================================
+       3. STATUS BUKA / TUTUP REAL-TIME (dihitung dari jam WIB lokal pengunjung)
+       ===================================================================== */
+    function getOpenStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const t   = CONFIG.hours[day];
+      const h   = now.getHours() + now.getMinutes() / 60;
+      if (h >= t.open && h < t.close) return { open: true,  text: `Buka sekarang · tutup ${fmtHour(t.close)}` };
+      if (h <  t.open)                return { open: false, text: `Tutup · buka hari ini ${fmtHour(t.open)}` };
+      const n = CONFIG.hours[(day + 1) % 7];
+      return { open: false, text: `Tutup · buka besok ${fmtHour(n.open)}` };
+    }
+    function updateOpenStatus() {
+      const s = getOpenStatus();
+      $$("[data-open-text]").forEach(el => el.textContent = s.text);
+      $$("[data-open-dot]").forEach(el => {
+        el.className = `w-2 h-2 rounded-full ${s.open ? "bg-leaf animate-pulse" : "bg-brick"}`;
+      });
+    }
+
+    /* =====================================================================
+       4. RENDER KONTEN DINAMIS (semua dari data di atas — gampang diedit)
+       ===================================================================== */
+    /* Price list dengan titik-titik penghubung, tiap baris → WhatsApp */
+    function renderPriceCol(elId, items) {
+      $(elId).innerHTML = items.map(s => `
+        <a href="${buildWa(`Halo Jes Gujes Gujes! Saya mau booking *${s.name}* (${money(s.price)}). Masih ada slot hari ini?`)}"
+           target="_blank" rel="noopener"
+           class="group block py-4 border-b border-ink/10 hover:border-ink transition-colors">
+          <div class="flex items-end gap-2">
+            <span class="font-semibold text-[15px]">${s.name}</span>
+            <span class="dots"></span>
+            <span class="font-display text-xl tracking-wider text-brick whitespace-nowrap group-hover:text-brickdark transition-colors">${money(s.price)}</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 mb-1.5 text-brick opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all"></i>
+          </div>
+          <p class="text-sm text-ink/55 mt-1 pr-6">${s.desc}</p>
+        </a>`).join("");
+    }
+
+    /* Kartu paket: 1 featured besar + 2 kartu horizontal bertumpuk */
+    function renderPackages() {
+      const waMsg = p => buildWa(`Halo Jes Gujes Gujes! Saya mau booking *${p.name}* (${money(p.price)}). Mohon info slot terdekatnya.`);
+      const old   = p => money(p.price + p.save);
+      const [feat, ...rest] = PACKAGES;
+
+      const featuredCard = `
+        <article class="bg-ink text-cream border-[3px] border-ink shadow-[14px_14px_0_#C1442E] flex flex-col">
+          <div class="relative">
+            <img src="${feat.img}" alt="${feat.name} — Jes Gujes Gujes Barbershop" loading="lazy"
+                 class="w-full h-56 md:h-64 object-cover border-b-[3px] border-ink">
+            <span class="absolute top-4 left-4 bg-brick text-cream text-[11px] font-bold tracking-[.22em] uppercase px-3 py-1.5 border-2 border-ink">${feat.tag}</span>
+          </div>
+          <div class="p-6 md:p-8 flex flex-col grow">
+            <h3 class="font-display text-3xl md:text-4xl tracking-[.06em]">${feat.name}</h3>
+            <p class="text-cream/60 text-sm mt-2">${feat.desc}</p>
+            <ul class="mt-5 space-y-2.5 text-sm">
+              ${feat.includes.map(i => `<li class="flex gap-2.5"><i data-lucide="check" class="w-4 h-4 mt-0.5 text-brick shrink-0"></i><span>${i}</span></li>`).join("")}
+            </ul>
+            <div class="mt-7 pt-5 border-t border-cream/15 flex flex-wrap items-end justify-between gap-4 mt-auto">
+              <div>
+                <p class="font-display text-4xl md:text-5xl leading-none">${money(feat.price)}</p>
+                <p class="text-cream/50 text-xs mt-1.5"><span class="line-through">${old(feat)}</span> · hemat ${money(feat.save)}</p>
+              </div>
+              <a href="${waMsg(feat)}" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-brick hover:bg-brickdark text-cream font-semibold px-6 py-3 rounded-full transition-colors">
+                <svg class="w-4 h-4"><use href="#wa-icon"/></svg> Pesan Paket
+              </a>
+            </div>
+          </div>
+        </article>`;
+
+      const smallCard = p => `
+        <article class="bg-cream border-[3px] border-ink shadow-[8px_8px_0_#191613] hover:shadow-[12px_12px_0_#191613] hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row">
+          <img src="${p.img}" alt="${p.name} — Jes Gujes Gujes Barbershop" loading="lazy"
+               class="w-full sm:w-40 h-40 sm:h-auto object-cover border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-ink">
+          <div class="p-5 flex flex-col grow">
+            <h3 class="font-display text-2xl tracking-[.06em]">${p.name}</h3>
+            <p class="text-ink/55 text-xs mt-1">${p.desc}</p>
+            <ul class="mt-3 space-y-1.5 text-[13px] text-ink/75">
+              ${p.includes.map(i => `<li class="flex gap-2"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 text-brick shrink-0"></i><span>${i}</span></li>`).join("")}
+            </ul>
+            <div class="mt-4 pt-3 border-t border-ink/10 flex items-end justify-between gap-3 mt-auto">
+              <div>
+                <p class="font-display text-3xl leading-none">${money(p.price)}</p>
+                <p class="text-ink/45 text-[11px] mt-1"><span class="line-through">${old(p)}</span> · hemat ${money(p.save)}</p>
+              </div>
+              <a href="${waMsg(p)}" target="_blank" rel="noopener" aria-label="Pesan ${p.name} via WhatsApp"
+                 class="grid place-items-center w-11 h-11 rounded-full bg-brick hover:bg-brickdark text-cream transition-colors shrink-0">
+                <svg class="w-4.5 h-4.5 w-5 h-5"><use href="#wa-icon"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>`;
+
+      $("#packagesGrid").innerHTML = featuredCard + `<div class="grid gap-6 content-start">${rest.map(smallCard).join("")}</div>`;
+    }
+
+    /* Tabel jam operasional — baris hari ini di-highlight */
+    function renderHours() {
+      const today = new Date().getDay();
+      $("#hoursList").innerHTML = CONFIG.hours.map((t, i) => `
+        <div class="flex items-center justify-between py-2 px-3 -mx-3 text-sm ${i === today ? "bg-ink text-cream font-semibold" : "border-b border-ink/10 text-ink/75"}">
+          <span>${t.d}${i === today ? ' <span class="ml-1 text-[10px] font-bold uppercase tracking-widest text-brick">hari ini</span>' : ""}</span>
+          <span>${fmtHour(t.open)} – ${fmtHour(t.close)}</span>
+        </div>`).join("");
+    }
+
+    /* Opsi layanan di form booking */
+    function fillServiceOptions() {
+      const all = [
+        ...SERVICES.dasar, ...SERVICES.spesial,
+        ...PACKAGES.map(p => ({ name: p.name, price: p.price })),
+      ];
+      $("#bkService").innerHTML =
+        '<option value="" disabled selected>Pilih layanan</option>' +
+        all.map(s => `<option value="${s.name} — ${money(s.price)}">${s.name} — ${money(s.price)}</option>`).join("");
+    }
+
+    /* Slot jam booking menyesuaikan jam operasional tanggal yang dipilih */
+    function buildSlots(open, close) {
+      let html = '<option value="" disabled selected>Pilih jam</option>';
+      for (let t = open * 60; t <= (close - 1) * 60; t += 30) {
+        const v = `${String(Math.floor(t / 60)).padStart(2, "0")}.${String(t % 60).padStart(2, "0")}`;
+        html += `<option value="${v}">${v} WIB</option>`;
+      }
+      $("#bkTime").innerHTML = html;
+    }
+
+    /* =====================================================================
+       5. TESTIMONI SLIDER
+       ===================================================================== */
+    let tsIndex = 0, tsTimer = null;
+
+    function paintTs() {
+      const t = TESTIMONIALS[tsIndex];
+      $("#tsBody").innerHTML = `
+        <div class="flex justify-center gap-1 text-brick">
+          ${Array.from({ length: t.rating }, () => `<i data-lucide="star" class="w-4 h-4 fill-brick"></i>`).join("")}
+        </div>
+        <blockquote class="mt-5 text-xl md:text-2xl font-light leading-relaxed">&ldquo;${t.text}&rdquo;</blockquote>
+        <p class="font-display text-xl md:text-2xl tracking-[.15em] mt-6">${t.name}</p>
+        <p class="text-cream/50 text-sm mt-1">${t.meta}</p>`;
+      lucide.createIcons();
+      $$("#tsDots button").forEach((b, i) => {
+        b.className = i === tsIndex
+          ? "h-2 w-6 rounded-full bg-brick transition-all"
+          : "h-2 w-2 rounded-full bg-cream/25 hover:bg-cream/50 transition-all";
+      });
+    }
+    function goTs(n) {
+      tsIndex = (n + TESTIMONIALS.length) % TESTIMONIALS.length;
+      const body = $("#tsBody");
+      body.classList.add("opacity-0");
+      setTimeout(() => { paintTs(); body.classList.remove("opacity-0"); }, 200);
+      restartTsAuto();
+    }
+    function restartTsAuto() {
+      clearInterval(tsTimer);
+      tsTimer = setInterval(() => goTs(tsIndex + 1), 7000);
+    }
+
+    /* =====================================================================
+       6. TOAST NOTIFIKASI
+       ===================================================================== */
+    let toastTimer;
+    function toast(msg) {
+      $("#toastMsg").textContent = msg;
+      const box = $("#toastBox");
+      box.classList.remove("opacity-0", "translate-y-4");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => box.classList.add("opacity-0", "translate-y-4"), 2800);
+    }
+
+    /* =====================================================================
+       7. INISIALISASI SEMUA
+       ===================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* --- Marquee: gandakan konten agar loop mulus --- */
+      const mq = $("#mqTrack");
+      mq.innerHTML += mq.innerHTML;
+      mq.innerHTML += mq.innerHTML;
+
+      /* --- Render konten dari data --- */
+      renderPriceCol("#priceDasar",   SERVICES.dasar);
+      renderPriceCol("#priceSpesial", SERVICES.spesial);
+      renderPackages();
+      renderHours();
+      fillServiceOptions();
+      buildSlots(CONFIG.hours[new Date().getDay()].open, CONFIG.hours[new Date().getDay()].close);
+
+      /* --- Isi semua tautan WA default --- */
+      $$("[data-wa-default]").forEach(a => a.href = buildWa(CONFIG.defaultMsg));
+      $("#waDisplay").textContent       = CONFIG.waDisplay;
+      $("#waDisplayFooter").textContent = CONFIG.waDisplay;
+
+      /* --- Testimoni --- */
+      $("#tsDots").innerHTML = TESTIMONIALS.map((_, i) =>
+        `<button aria-label="Lihat testimoni ${i + 1}" class="h-2 w-2 rounded-full bg-cream/25"></button>`).join("");
+      $$("#tsDots button").forEach((b, i) => b.addEventListener("click", () => goTs(i)));
+      $("#tsPrev").addEventListener("click", () => goTs(tsIndex - 1));
+      $("#tsNext").addEventListener("click", () => goTs(tsIndex + 1));
+      paintTs();
+      restartTsAuto();
+
+      /* --- Reveal on scroll --- */
+      const io = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      }), { threshold: .12 });
+      $$(".reveal").forEach(el => io.observe(el));
+
+      /* --- Navbar: bayangan saat scroll + menu mobile --- */
+      const header = $("#siteHeader");
+      addEventListener("scroll", () => header.classList.toggle("is-scrolled", scrollY > 8), { passive: true });
+
+      const menu = $("#mobileMenu");
+      const setMenu = open => {
+        menu.classList.toggle("hidden", !open);
+        $("#iconOpen").classList.toggle("hidden", open);
+        $("#iconClose").classList.toggle("hidden", !open);
+      };
+      $("#menuBtn").addEventListener("click", () => setMenu(menu.classList.contains("hidden")));
+      $$("#mobileMenu a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+
+      /* --- Salin nomor WhatsApp --- */
+      $("#copyWa").addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(CONFIG.wa); }
+        catch {
+          const t = document.createElement("textarea");
+          t.value = CONFIG.wa; document.body.appendChild(t);
+          t.select(); document.execCommand("copy"); t.remove();
+        }
+        toast("Nomor WhatsApp disalin: " + CONFIG.waDisplay);
+      });
+
+      /* --- Form booking cepat --- */
+      const dateInput = $("#bkDate");
+      dateInput.min = new Date().toISOString().slice(0, 10);
+      dateInput.addEventListener("change", e => {
+        const d = new Date(e.target.value + "T00:00:00");
+        if (!isNaN(d)) buildSlots(CONFIG.hours[d.getDay()].open, CONFIG.hours[d.getDay()].close);
+      });
+
+      $("#bookingForm").addEventListener("submit", e => {
+        e.preventDefault();
+        const nama    = $("#bkName").value.trim();
+        const layanan = $("#bkService").value;
+        const tglId   = new Date($("#bkDate").value + "T00:00:00")
+                          .toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+        const jam     = $("#bkTime").value;
+        const msg = `Halo Jes Gujes Gujes! Saya *${nama}* mau booking:\n- Layanan: ${layanan}\n- Tanggal: ${tglId}\n- Jam: ${jam} WIB\n\nMohon konfirmasi slotnya ya, terima kasih!`;
+        window.open(buildWa(msg), "_blank");
+        toast("Membuka WhatsApp — pesan booking kamu sudah disiapkan.");
+      });
+
+      /* --- Lain-lain --- */
+      $("#year").textContent = new Date().getFullYear();
+      updateOpenStatus();
+      setInterval(updateOpenStatus, 30000);
+
+      /* Render semua ikon Lucide (panggil terakhir, setelah semua HTML dinamis) */
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
